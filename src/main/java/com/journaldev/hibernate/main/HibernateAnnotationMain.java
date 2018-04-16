@@ -1,6 +1,6 @@
 package com.journaldev.hibernate.main;
 
-import com.journaldev.hibernate.model.Employee1;
+import com.journaldev.hibernate.model.Employee;
 import com.journaldev.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -10,7 +10,7 @@ import java.util.Date;
 public class HibernateAnnotationMain {
 
     public static void main(String[] args) {
-        Employee1 emp = new Employee1();
+        Employee emp = new Employee();
         emp.setName("David");
         emp.setRole("Developer");
         emp.setInsertTime(new Date());

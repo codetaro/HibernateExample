@@ -8,7 +8,7 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/TestDB</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.password"></property>
         <!-- Connection Pool Size -->
         <property name="hibernate.connection.pool_size">1</property>
 
@@ -24,5 +24,9 @@
 
         <!-- mapping file, we can use Bean annotations too -->
         <mapping resource="employee.hbm.xml" />
+        <mapping resource="txn.hbm.xml" />
+        <mapping resource="customer.hbm.xml" />
+        <mapping resource="cart.hbm.xml" />
+        <mapping resource="items.hbm.xml" />
     </session-factory>
 </hibernate-configuration>

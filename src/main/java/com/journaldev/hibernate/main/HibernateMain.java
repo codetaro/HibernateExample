@@ -1,6 +1,5 @@
 package com.journaldev.hibernate.main;
 
-import com.journaldev.hibernate.model.Employee;
 import com.journaldev.hibernate.util.HibernateUtil;
 import org.hibernate.Session;
 

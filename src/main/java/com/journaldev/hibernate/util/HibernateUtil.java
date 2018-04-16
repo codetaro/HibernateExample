@@ -1,7 +1,6 @@
 package com.journaldev.hibernate.util;
 
-import com.journaldev.hibernate.model.Employee1;
-import org.hibernate.Session;
+import com.journaldev.hibernate.model.Employee;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -36,6 +35,7 @@ public class HibernateUtil {
             return sessionFactory;
         } catch (Throwable ex) {
             System.err.println("Initial SessionFactory creation failed." + ex);
+            ex.printStackTrace();
             throw new ExceptionInInitializerError(ex);
         }
     }
@@ -67,12 +67,12 @@ public class HibernateUtil {
             props.put("hibernate.connection.driver_class", "com.mysql.jdbc.Driver");
             props.put("hibernate.connection.url", "jdbc:mysql://localhost/TestDB");
             props.put("hibernate.connection.username", "root");
-            props.put("hibernate.connection.password", "admin");
+            props.put("hibernate.connection.password", "");
             props.put("hibernate.current_session_context_class", "thread");
 
             configuration.setProperties(props);
 
-            configuration.addAnnotatedClass(Employee1.class);
+            configuration.addAnnotatedClass(Employee.class);
 
             ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
                     .applySettings(configuration.getProperties()).build();

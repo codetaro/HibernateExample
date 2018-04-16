@@ -1,19 +1,34 @@
 package com.journaldev.hibernate.model;
 
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
 import java.util.Date;
 
+@Entity
+@Table(name="EMPLOYEE")
 public class Employee {
 
-    private int id;
-    private String name;
-    private String role;
-    private Date insertTime;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "emp_id")
+    private long id;
 
-    public int getId() {
+    @Column(name = "emp_name")
+    private String name;
+
+    @Column(name="emp_salary")
+    private double salary;
+
+    @OneToOne(mappedBy = "employee")
+    @Cascade(value = org.hibernate.annotations.CascadeType.ALL)
+    private Address address;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -25,19 +40,19 @@ public class Employee {
         this.name = name;
     }
 
-    public String getRole() {
-        return role;
+    public double getSalary() {
+        return salary;
     }
 
-    public void setRole(String role) {
-        this.role = role;
+    public void setSalary(double salary) {
+        this.salary = salary;
     }
 
-    public Date getInsertTime() {
-        return insertTime;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setInsertTime(Date insertTime) {
-        this.insertTime = insertTime;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 }

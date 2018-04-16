@@ -8,12 +8,19 @@
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <property name="hibernate.connection.url">jdbc:mysql://localhost/TestDB</property>
         <property name="hibernate.connection.username">root</property>
-        <property name="hibernate.connection.password">admin</property>
+        <property name="hibernate.connection.password"></property>
 
         <!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
         <property name="hibernate.current_session_context_class">thread</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="show_sql">true</property>
 
         <!-- Mapping with model class containing annotations -->
-        <mapping class="com.journaldev.hibernate.model.Employee1"/>
+        <mapping class="com.journaldev.hibernate.model.Employee"/>
+        <mapping class="com.journaldev.hibernate.model.Txn1"/>
+        <mapping class="com.journaldev.hibernate.model.Customer1"/>
+        <mapping class="com.journaldev.hibernate.model.Cart1"/>
+        <mapping class="com.journaldev.hibernate.model.Item1"/>
+
     </session-factory>
 </hibernate-configuration>
